@@ -3,6 +3,9 @@ from arango.database import StandardCollection, StandardDatabase
 from loguru import logger
 from settings import ARANGO_URL, DATABASE_NAME, COLLECTION_NAME
 
+
+logger.info(
+    f"connecting to {ARANGO_URL}, db: {DATABASE_NAME}, coll: {COLLECTION_NAME}")
 client = arango.ArangoClient(hosts=ARANGO_URL)
 
 _sys_db: StandardDatabase = client.db()
