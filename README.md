@@ -16,3 +16,13 @@ $ pipenv install
 $ pipenv shell
 $ python main.py
 ```
+
+**Minsky Enviroment Deployment**
+
+```bash
+$ docker build .
+$ export IMAGE=<your-image-id>
+$ docker image tag $IMAGE docker.minsky.cc/dreamer
+$ docker push docker.minsky.cc/dreamer
+$ helm update dreamer ./dreamer
+```
