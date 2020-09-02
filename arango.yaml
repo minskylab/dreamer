@@ -1,0 +1,23 @@
+apiVersion: database.arangodb.com/v1alpha
+kind: ArangoDeployment
+metadata:
+  name: dreamer-arangodb
+spec:
+  mode: Single
+  spec.externalAccess.Type: None
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dreamer-arangodb-exposed
+spec:
+  selector:
+    arango_deployment: dreamer-arangodb
+    role: coordinator
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8529
+      targetPort: 8529
+      nodePort: 30529
