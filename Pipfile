@@ -9,6 +9,7 @@ autopep8 = "*"
 [packages]
 python-dotenv = "*"
 flask = "*"
+pyarango = "*"
 
 [requires]
 python_version = "3.8"

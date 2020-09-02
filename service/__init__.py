@@ -1,6 +1,6 @@
-from dream import Dream, DreamDraft, DreamerDraft
-from flask import Flask, request, json, jsonify
 import time
+from flask import Flask, request, json, jsonify
+from .dream import Dream, DreamDraft, DreamerDraft
 
 app = Flask("Dreamer Simple API")
 
@@ -19,6 +19,3 @@ def hello_world():
     dream_id = save_dream(obj)
     res = jsonify({"id": dream_id})
     return res
-
-
-app.run(host="127.0.0.1", port=8080)
