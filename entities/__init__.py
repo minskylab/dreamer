@@ -14,6 +14,7 @@ class Dream:
     id: str
     dreamer: Dreamer
     date: str
+    registered_at: str
 
 
 @dataclass

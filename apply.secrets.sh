@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl create secret generic dreamerdb --from-env-file=.env
+kubectl create secret generic dreamer --from-env-file=.env

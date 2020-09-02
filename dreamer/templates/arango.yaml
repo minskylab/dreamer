@@ -1,0 +1,12 @@
+apiVersion: database.arangodb.com/v1alpha
+kind: ArangoDeployment
+metadata:
+    name: {{ include "dreamer.fullname" . }}-db
+spec:
+    mode: Single
+    tls:
+        caSecretName: None
+    auth:
+        jwtSecretName: None
+    externalAccess:
+        type: None

@@ -9,11 +9,16 @@ from entities import Dream, DreamDraft, Dreamer
 def save_new_dream(draft: DreamDraft) -> Dream:
     dream_id = str(uuid4())
     now = str(datetime.now())
+
     dreamer = Dreamer(id=draft.dreamer.id,
                       name=draft.dreamer.name,
                       age=draft.dreamer.age)
 
-    new_dream = Dream(id=dream_id, date=now, dreamer=dreamer)
+    new_dream = Dream(id=dream_id,
+                      date=draft.date,
+                      dreamer=dreamer,
+                      registered_at=now)
+
     logger.info(f"saving new dream of {dreamer.name}")
 
     try:
