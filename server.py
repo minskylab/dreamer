@@ -2,7 +2,7 @@ from dream import Dream, DreamDraft, DreamerDraft
 from flask import Flask, request, json, jsonify
 import time
 
-app = Flask(__name__)
+app = Flask("Dreamer Simple API")
 
 
 def save_dream(dream: DreamDraft) -> str:
