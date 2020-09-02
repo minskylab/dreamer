@@ -1,6 +1,7 @@
+
 from service import app
 from settings import HOST, PORT
 
 
 if __name__ == "__main__":
-    app.run(host=HOST, port=PORT, debug=True)
+    app.run(host=HOST, port=PORT, debug=False)

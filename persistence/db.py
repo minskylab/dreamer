@@ -1,8 +1,9 @@
 import arango
 from arango.database import StandardCollection, StandardDatabase
+from loguru import logger
 from settings import ARANGO_URL, DATABASE_NAME, COLLECTION_NAME
 
-client = arango.ArangoClient(hosts=ARANGO_URL, host_resolver="rocksdb")
+client = arango.ArangoClient(hosts=ARANGO_URL)
 
 _sys_db: StandardDatabase = client.db()
 if not _sys_db.has_database(DATABASE_NAME):
@@ -17,3 +18,5 @@ else:
         COLLECTION_NAME)
 
 dreams_collection.add_hash_index(fields=["id"], unique=False)
+
+logger.info("dreams collection ready")

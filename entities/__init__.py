@@ -4,22 +4,23 @@ from dataclasses import dataclass
 
 @dataclass
 class Dreamer:
-    id: str = str(uuid.uuid4())
-    name: str = ""
-    age: int = -1
+    name: str
+    id: str
+    age: int
 
 
 @dataclass
 class Dream:
-    id: str = str(uuid.uuid4())
-    dreamer: Dreamer = Dreamer()
-    date: str = ""
+    id: str
+    dreamer: Dreamer
+    date: str
 
 
 @dataclass
 class DreamerDraft:
     name: str
-    age: int
+    id: str = "anonymous"
+    age: int = -1
 
 
 @dataclass
