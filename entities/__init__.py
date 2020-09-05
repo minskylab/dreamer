@@ -13,6 +13,7 @@ class Dreamer:
 class Dream:
     id: str
     dreamer: Dreamer
+    dream: str
     date: str
     registered_at: str
 

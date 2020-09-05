@@ -16,6 +16,7 @@ def save_new_dream(draft: DreamDraft) -> Dream:
 
     new_dream = Dream(id=dream_id,
                       date=draft.date,
+                      dream=draft.dream,
                       dreamer=dreamer,
                       registered_at=now)
 
