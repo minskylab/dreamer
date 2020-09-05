@@ -6,7 +6,7 @@ spec:
     mode: Single
     tls:
         caSecretName: None
-    auth:
-        jwtSecretName: None
+    # auth:
+    #     jwtSecretName: None
     externalAccess:
         type: None
