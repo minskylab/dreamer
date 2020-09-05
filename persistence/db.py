@@ -1,18 +1,18 @@
 import arango
 from arango.database import StandardCollection, StandardDatabase
 from loguru import logger
-from settings import ARANGO_URL, DATABASE_NAME, COLLECTION_NAME
+from settings import ARANGO_URL, DATABASE_NAME, COLLECTION_NAME, PASSWORD
 
 
 logger.info(
     f"connecting to {ARANGO_URL}, db: {DATABASE_NAME}, coll: {COLLECTION_NAME}")
 client = arango.ArangoClient(hosts=ARANGO_URL)
 
-_sys_db: StandardDatabase = client.db()
+_sys_db: StandardDatabase = client.db(password=PASSWORD)
 if not _sys_db.has_database(DATABASE_NAME):
     _sys_db.create_database(DATABASE_NAME)
 
-db = client.db(DATABASE_NAME)
+db = client.db(DATABASE_NAME, password=PASSWORD)
 
 if db.has_collection(COLLECTION_NAME):
     dreams_collection: StandardCollection = db.collection(COLLECTION_NAME)
