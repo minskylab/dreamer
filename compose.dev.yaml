@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  dreamer:
+    build: .
+    restart: always
+    ports:
+      - 5000:5000
+    environment:
+      - ARANGO_ENDPOINT=http://arango:8529
+      - ARANGO_PASSWORD=root
+    links:
+      - arango
+
+  arango:
+    image: arangodb
+    restart: always
+    environment:
+      - ARANGO_ROOT_PASSWORD=root
+    volumes:
+      - dbdata:/var/lib/arangodb3
+
+volumes:
+  dbdata:
