@@ -11,6 +11,9 @@ python-dotenv = "*"
 flask = "*"
 python-arango = "*"
 loguru = "*"
+graphene = "*"
+starlette = "*"
+uvicorn = "*"
 
 [requires]
 python_version = "3.8"
