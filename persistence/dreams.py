@@ -3,7 +3,7 @@ from dataclasses import asdict
 from datetime import datetime
 from persistence.db import dreams_collection
 from uuid import uuid4
-from entities import Dream, DreamDraft, Dreamer
+from entities import Dream, DreamDraft, Dreamer, DreamerDraft
 
 
 def save_new_dream(draft: DreamDraft) -> Dream:
@@ -29,3 +29,10 @@ def save_new_dream(draft: DreamDraft) -> Dream:
         e.with_traceback()
 
     return new_dream
+
+
+def save_dream(dream: DreamDraft) -> str:
+    dream.dreamer = DreamerDraft(**dream.dreamer)
+    print(f"saving dream of {dream.dreamer.name}.")
+    new_dream = save_new_dream(dream)
+    return new_dream.id
