@@ -1,0 +1,27 @@
+type Dreamer {
+    id: ID
+    name: String!
+    age: Int
+}
+
+type Dream {
+    id: ID!
+    registeredAt: String!
+    dream: String!
+    date: String
+    dreamer: Dreamer!
+}
+
+input DreamerDraft {
+    id: ID
+    name: String!
+    age: Int
+}
+
+type Query {
+    health: String!
+}
+
+type Mutation {
+    registerNewDream(dream: String!, date: String!, dreamer: DreamerDraft!): String!
+}

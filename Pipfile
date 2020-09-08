@@ -14,6 +14,7 @@ loguru = "*"
 graphene = "*"
 starlette = "*"
 uvicorn = "*"
+ariadne = "*"
 
 [requires]
 python_version = "3.8"
