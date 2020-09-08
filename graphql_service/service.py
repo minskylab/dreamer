@@ -13,12 +13,12 @@ class GQLDreamerDraft(graphene.InputObjectType):
 
 
 class RegisterNewDream(graphene.Mutation):
+    id = graphene.String()
+
     class Arguments:
         dream = graphene.String(required=True)
         date = graphene.String(required=True)
         dreamer = GQLDreamerDraft()
-
-    id = graphene.String()
 
     def mutate(root, info, dream: str, date: str, dreamer: GQLDreamerDraft):
         print(dream, date, dreamer)
