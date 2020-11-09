@@ -1,15 +1,9 @@
 import graphene
 
-
-class Dreamer(graphene.ObjectType):
+class Activity(graphene.ObjectType):
     id = graphene.ID()
-    name = graphene.String()
-    age = graphene.Int()
-
-
-class Dream(graphene.ObjectType):
-    id = graphene.ID()
-    dream = graphene.String()
-    date = graphene.String()
-    registered_at = graphene.String()
-    dreamer = graphene.Field(Dreamer)
+    activity_type = graphene.String()
+    nombre_cliente =  graphene.String()
+    observaciones =  graphene.String()
+    foto_fachada = graphene.String()
+    foto_cintillo = graphene.String()

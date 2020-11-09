@@ -1,27 +1,16 @@
-type Dreamer {
+type Case {
     id: ID
-    name: String!
-    age: Int
+    client_name: String!
+    observations: String!
+    house_photo: String!
+    headband_photo: String!
+   
 }
 
-type Dream {
-    id: ID!
-    registeredAt: String!
-    dream: String!
-    date: String
-    dreamer: Dreamer!
-}
-
-input DreamerDraft {
-    id: ID
-    name: String!
-    age: Int
-}
 
 type Query {
-    health: String!
+    live: Int!
+    process(code: String!): Activity!
 }
 
-type Mutation {
-    registerNewDream(dream: String!, date: String!, dreamer: DreamerDraft!): String!
-}
+

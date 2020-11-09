@@ -15,11 +15,11 @@ if not _sys_db.has_database(DATABASE_NAME):
 db = client.db(DATABASE_NAME, password=ARANGO_PASSWORD)
 
 if db.has_collection(COLLECTION_NAME):
-    dreams_collection: StandardCollection = db.collection(COLLECTION_NAME)
+    cases_collection: StandardCollection = db.collection(COLLECTION_NAME)
 else:
-    dreams_collection: StandardCollection = db.create_collection(
+    cases_collection: StandardCollection = db.create_collection(
         COLLECTION_NAME)
 
-dreams_collection.add_hash_index(fields=["id"], unique=False)
+cases_collection.add_hash_index(fields=["id"], unique=False)
 
-logger.info("dreams collection ready")
+logger.info("cases collection ready")

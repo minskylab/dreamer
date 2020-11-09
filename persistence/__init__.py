@@ -1,1 +1,1 @@
-from .db import client, dreams_collection
+from .db import client, cases_collection

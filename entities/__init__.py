@@ -3,30 +3,10 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Dreamer:
-    name: str
+class Case:
     id: str
-    age: int
+    client_name: str
+    observations: str
+    house_photo: str
+    headband_photo: str
 
-
-@dataclass
-class Dream:
-    id: str
-    dreamer: Dreamer
-    dream: str
-    date: str
-    registered_at: str
-
-
-@dataclass
-class DreamerDraft:
-    name: str
-    id: str = "anonymous"
-    age: int = -1
-
-
-@dataclass
-class DreamDraft:
-    dreamer: DreamerDraft
-    dream: str
-    date: str
